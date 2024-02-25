@@ -1,0 +1,41 @@
+@use '../styles/colors';
+@use '../styles/fonts';
+
+@mixin common-style {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.error{
+    @include common-style;
+    background-color: colors.$light-red-color;
+    color: colors.$text-button-color;
+    font-size: fonts.$subtitle-font-size;
+    width: auto
+}
+
+.lost, .win {
+    @include common-style;
+    background-color: colors.$light-red-color;
+    text-align: center;
+    border: 2px outset colors.$dark-red-color;
+    position: absolute;
+    top: auto;
+    box-shadow: inset 4px 4px 4px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 4px 4px 10px rgba(0,0,0,.1);
+
+    &.win {
+        background-color: colors.$dark-green-color;
+        border-color: colors.$dark-green-color;
+    }
+}
+
+.game-over{
+    font-size: fonts.$subtitle-font-size;
+    color: colors.$text-button-color;
+}
+
+.mines-counter{
+    display: block;
+    text-align: center;
+    align-items: center;
+}

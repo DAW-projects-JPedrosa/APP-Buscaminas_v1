@@ -1,0 +1,77 @@
+@use '../styles/colors';
+@use '../styles/containers';
+
+.container{
+    @include containers.flex-container(justify);
+    width: 100%;
+}
+
+.minesweeper-board {
+    display:flex;
+    flex-wrap: nowrap; 
+    align-content: space-between; 
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+}
+
+.board{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.row{
+    display: inline-block;
+    gap: 1px;
+}
+
+.cell {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 18px;
+    gap:2px;
+    background-color: colors.$cell-color;
+    box-shadow: inset 1px 1px 1px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+    transition: background-color 0.5s ease;
+
+    &:not(.defused):not(.cell.exploded):hover{
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+
+    &.defused {
+        background-color: colors.$cell-defused;
+        box-shadow: none;
+        border: 1px solid colors.$cell-defused-border;
+    }
+
+    &.flagged {
+        background-color: colors.$cell-flagged;
+    }
+    
+    &.exploded {
+        background-color: colors.$cell-exploded;
+    }
+
+    @media screen and (max-width: 600px) {
+        height: 22px;
+        width: 22px;
+    }
+}
+
+.mines-counter{
+    display: block;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.counter{
+    margin: 10px;
+}

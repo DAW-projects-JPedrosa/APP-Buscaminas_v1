@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a cell with defused state and 0 mines around 1`] = `
+<div
+  className="cell defused  "
+  id="1-2"
+  onClick={[Function]}
+  onContextMenu={[Function]}
+/>
+`;
+
+exports[`Renders a cell with defused state and 3 mines around 1`] = `
+<div
+  className="cell defused  "
+  id="1-2"
+  onClick={[Function]}
+  onContextMenu={[Function]}
+>
+  3
+</div>
+`;
+
+exports[`Renders a cell with exploded state 1`] = `
+<div
+  className="cell   exploded"
+  id="1-3"
+  onClick={[Function]}
+  onContextMenu={[Function]}
+>
+  💣
+</div>
+`;
+
+exports[`Renders a cell with flagged state 1`] = `
+<div
+  className="cell  flagged "
+  id="1-3"
+  onClick={[Function]}
+  onContextMenu={[Function]}
+>
+  🚩
+</div>
+`;
+
+exports[`Renders a cell without any state 1`] = `
+<div
+  className="cell   "
+  id="0-0"
+  onClick={[Function]}
+  onContextMenu={[Function]}
+/>
+`;

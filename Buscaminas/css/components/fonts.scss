@@ -1,0 +1,18 @@
+@use '../styles/fonts';
+@use '../styles/colors';
+
+*{
+    font-family: fonts.$main-font-family;
+    font-size: fonts.$main-font-size;
+}
+.title{
+    color: colors.$title-color;   
+    font-size: fonts.$title-font-size; 
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .title{
+        font-size: fonts.$title-font-size * 0.7;
+    }
+}

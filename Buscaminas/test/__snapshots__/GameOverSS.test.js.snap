@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a message of game over when the player loses 1`] = `
+<div
+  className="lost"
+  id="game-over-msg"
+>
+  <div
+    className="game-over"
+  >
+    Has perdido
+  </div>
+  <button
+    className="close"
+    onClick={[Function]}
+  >
+    Cerrar
+  </button>
+</div>
+`;
+
+exports[`Renders a message of game over when the player wins 1`] = `
+<div
+  className="win"
+  id="game-over-msg"
+>
+  <div
+    className="game-over"
+  >
+    Has ganado
+  </div>
+  <button
+    className="close"
+    onClick={[Function]}
+  >
+    Cerrar
+  </button>
+</div>
+`;

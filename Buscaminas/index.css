@@ -1,0 +1,222 @@
+* {
+  font-family: "Arial, Helvetica, sans-serif";
+  font-size: 1.05em;
+}
+
+.title {
+  color: rgb(121, 140, 186);
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 2.45em;
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: justify;
+  width: 100%;
+}
+
+.minesweeper-board {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: fit-content;
+}
+
+.board {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.row {
+  display: inline-block;
+  gap: 1px;
+}
+
+.cell {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 18px;
+  gap: 2px;
+  background-color: rgb(208, 229, 177);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.7), inset -2px -2px 3px rgba(0, 0, 0, 0.1), 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+}
+.cell:not(.defused):not(.cell.exploded):hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.cell.defused {
+  background-color: white;
+  box-shadow: none;
+  border: 1px solid whitesmoke;
+}
+.cell.flagged {
+  background-color: rgb(129, 185, 122);
+}
+.cell.exploded {
+  background-color: #ed6464;
+}
+@media screen and (max-width: 600px) {
+  .cell {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+.mines-counter {
+  display: block;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.counter {
+  margin: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  width: auto;
+  top: 40%;
+}
+
+.close {
+  font-size: 1.05em;
+  background-color: #1899D6;
+  color: #FFFFFF;
+  margin-top: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+.close:hover {
+  opacity: 0.7;
+}
+
+.game-button {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid black;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: din-round, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin-top: 10px;
+  outline: none;
+  overflow: visible;
+  padding: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+.game-button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+.game-button:disabled {
+  cursor: auto;
+}
+.game-button:active {
+  border-width: 4px 0 0;
+}
+.game-button .button-level {
+  margin-top: -30px;
+}
+
+.error {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(236, 127, 127);
+  color: #FFFFFF;
+  font-size: 2.5em;
+  width: auto;
+}
+
+.lost, .win {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(236, 127, 127);
+  text-align: center;
+  border: 2px outset rgb(195, 51, 51);
+  position: absolute;
+  top: auto;
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.7), inset -2px -2px 3px rgba(0, 0, 0, 0.1), 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.lost.win, .win.win {
+  background-color: rgb(106, 141, 77);
+  border-color: rgb(106, 141, 77);
+}
+
+.game-over {
+  font-size: 2.5em;
+  color: #FFFFFF;
+}
+
+.mines-counter {
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  margin: 10px;
+  animation: tilt-n-move-shaking 0.25s infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 150px;
+    margin: 10px;
+  }
+}
+@keyframes tilt-n-move-shaking {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}

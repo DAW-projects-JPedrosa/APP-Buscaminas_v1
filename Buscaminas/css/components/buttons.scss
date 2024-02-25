@@ -1,0 +1,74 @@
+@use '../styles/colors';
+@use '../styles/fonts';
+@use '../styles/containers';
+
+@mixin button-styles {
+  appearance: button;
+  background-color: colors.$main-button-color;
+  border: solid black;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: colors.$text-button-color;
+  cursor: pointer;
+  font-family: din-round, sans-serif;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin-top: 10px;
+  outline: none;
+  overflow: visible;
+  padding: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+
+  &:hover:not(:disabled) {
+      filter: brightness(1.1);
+      -webkit-filter: brightness(1.1);
+  }
+
+  &:disabled {
+      cursor: auto;
+  }
+
+  &:active {
+      border-width: 4px 0 0;
+
+  }
+}
+
+.buttons-container {
+  @include containers.flex-container(center);
+  width: auto;
+  top: 40%;
+}
+
+.close {
+  font-size: fonts.$main-font-size;
+  background-color: colors.$main-button-color;
+  color: colors.$text-button-color;
+  margin-top: 10px;
+  padding: 5px;
+  cursor: pointer;
+
+  &:hover {
+      opacity: 0.7;
+  }
+}
+
+.game-button {
+  @include button-styles;
+  
+  .button-level {
+    margin-top: -30px;
+  }
+}
+
