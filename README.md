@@ -1,4 +1,5 @@
-#Buscaminas v1
+# Buscaminas v1
 
-App --> 'buscaminas' folder.
-API --> 'buscaminas-api' folder.
+App 'buscaminas' obtains data from local api 'buscaminas-api' folder.
+
+Launch api before execute app.
